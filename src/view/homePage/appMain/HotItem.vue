@@ -17,7 +17,7 @@
 
 <script setup>
 // 使用 defineProps 声明组件可以接收的 props
-import { defineProps } from 'vue';
+// import { defineProps } from 'vue';
 import { computed } from 'vue';
 
 const props = defineProps({
