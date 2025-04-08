@@ -14,7 +14,7 @@
     <p class="hot-item-text">{{item.hotName}}</p>
     <span class="hot-item-classification">by</span>
     <span class="hot-item-author">{{item.hotContext}}</span>
-    <img src="../../../assets/img/Vip.png" alt="">
+    <img src="https://p5.music.126.net/obj/wo3DlcOGw6DClTvDisK1/4788940880/1a1f/68f5/b59a/b444b81b88567108ba88194fa29144f5.png" alt="">
   </div>
 </template>
 

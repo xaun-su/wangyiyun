@@ -27,9 +27,9 @@
           <AppTitle title="榜单" />
           <div class="rank-list-item">
             <div class="rank-item">
-              <div v-for="i in 3" :key="i">
                 <TabList  :itemList="displayedRankItems" />
-              </div>
+                <TabList  :itemList="displayedRank2Items" />
+                <TabList  :itemList="displayedRank3Items" />
             </div>
           </div>
         </div>
@@ -57,11 +57,11 @@ const error = ref(null); // 用于存储错误信息
 
 onMounted(async () => {
   try {
-    const response = await axios.get('http://127.0.0.1:4523/m1/6158319-5850355-default/discover/home');
+    const response = await axios.get('https://mock.presstime.cn/mock/67f33492aa477834147779e7/WYW/discover/home');
     console.log(response.data);
     // 确保 response.data.data 存在且是数组
-    if (response.data && response.data.data && Array.isArray(response.data.data)) {
-      data.value = response.data.data[0];
+    if (response.data && response.data.data) {
+      data.value = response.data.data;
       console.log(data.value);
     } else {
       error.value = 'API 返回的数据格式不正确';
@@ -80,13 +80,19 @@ const displayedHotItems = computed(() => {
 // console.log(displayedHotItems);
 // 用于提取 data 数组的 得片属性
 const displayedDiscItems= computed(() => {
-  console.log('计算 displayedDiscItems'); // 确认计算属性是否被调用
   return data.value?.disc || [];
 });
 // 用于提取 data 数组的 得片属性
-const displayedRankItems= computed(() => {
-  return data.value?.rank || [];
+const displayedRankItems = computed(() => {
+  return data.value?.rank?.slice(0, 10) || [];
 });
+const displayedRank2Items = computed(() => {
+  return data.value?.rank?.slice(10, 20) || [];
+});
+const displayedRank3Items = computed(() => {
+  return data.value?.rank?.slice(20, 30) || [];
+});
+
 </script>
 
 <style scoped lang="less">

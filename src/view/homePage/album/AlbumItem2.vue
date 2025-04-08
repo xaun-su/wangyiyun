@@ -20,12 +20,15 @@ const props = defineProps({
 <style scoped lang="less">
 .album2-item{
   padding:0 33px 30px 0;
+  display: flex;
+  flex-direction: column;
 }
 .album2-item-img{
   width: 153px;
   height: 130px;
   background-image: url(@/assets/img/背景碟片.jpg);
   background-size:cover;
+
 }
 img{
   width: 130px;
@@ -37,7 +40,19 @@ p{
 span{
   font-size: 12px;
 }
+.name{
+  width: 130px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+}
 .content{
   color: #666666;
+  width: 130px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
 }
 </style>

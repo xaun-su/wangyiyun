@@ -24,7 +24,7 @@
   const data = ref(null);
   onMounted(async () => {
     try {
-      axios.get('http://127.0.0.1:4523/m1/6158319-5850355-default/discover/album')
+      axios.get('https://mock.presstime.cn/mock/67f33492aa477834147779e7/WYW/discover/album')
         .then(response => {
           console.log(response.data);
           data.value = response.data.data.album;

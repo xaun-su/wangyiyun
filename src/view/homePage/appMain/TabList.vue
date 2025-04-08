@@ -158,7 +158,13 @@ li:last-child {
 .more {
   margin-right: 30px;
 }
-
+.songName{
+  width: 160px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+}
 .truncate-text {
   width: 110px;
   overflow: hidden;

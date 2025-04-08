@@ -24,7 +24,7 @@ const error = ref(null); // 用于存储错误信息
 
 onMounted(async () => {
   try {
-    const response = await axios.get('http://127.0.0.1:4523/m1/6158319-5850355-default/discover/playlist');
+    const response = await axios.get('https://mock.presstime.cn/mock/67f33492aa477834147779e7/WYW/discover/playlist');
     console.log(response.data);
     if (response.data && response.data.data) {
       data.value = response.data.data.playList;
